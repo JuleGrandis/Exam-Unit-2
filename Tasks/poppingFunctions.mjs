@@ -53,7 +53,7 @@ function areaOfCircle(radius) {
 }
 
 function greet(name) {
-    return consts.GREETING_TEMP `${name}!`;
+    return `${consts.GREETING_TEMP}${name}!`;
 }
 
 console.log(cube(3));
