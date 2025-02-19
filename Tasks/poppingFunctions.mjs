@@ -25,7 +25,11 @@ function inchToMM(int) {
     return int * consts.INCH_CONVERSION;
 }
 
-function root(num){
+function absolute(value) {
+    value < 0 ? -value : value; 
+}
+
+function root(num, precision = consts.DEFAULT_PRECISION){
 
     if (num < 0) {
         throw new Error(consts.ERROR_NEGATIVE_ROOT); 
@@ -35,7 +39,9 @@ function root(num){
     do {
         prev = x;
         x = (x + n / x)
-    }
+    } while (absolute(x - prev) > precision);
+
+    return x;
 }
 
 function cube(num) {
