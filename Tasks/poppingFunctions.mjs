@@ -14,7 +14,7 @@ Create the following functions:
 const consts = {
     INCH_CONVERSION: 25.4,
     PI: 3.14159,
-    DEFAULT_PRECISION: 1e-7, //Set to 1e-7 following Newton-Raphson method
+    DEFAULT_PRECISION: 1e-7, //Set to 1e-7 following Newton-Raphson method to limit iterations
     ERROR_NEGATIVE_ROOT: "Can't root negative numbers",
     GREETING_TEMP: "Greetings, "
 }
@@ -22,7 +22,6 @@ const consts = {
 function absolute(value) { // Helper function to ensure input value isn't negative used in later function
     return value < 0 ? -value : value; 
 }
-
 
 function inchToMM(int) {
     return int * consts.INCH_CONVERSION;
@@ -59,7 +58,7 @@ function mathOperations(operation) {
                 } while (absolute(x - prev) > consts.DEFAULT_PRECISION);
 
                 return x;
-                
+
             default:
                 return null;
         }
@@ -73,7 +72,7 @@ const root = mathOperations("root");
 addSpacing(1);
 
 
-// Use-case Functionality Tests
+// Use-case Functionality Tests -----------------------------------------------------------------------------------
 
 print(square(10));
 print(inchToMM(20));
@@ -84,14 +83,15 @@ print(greet("Aleks"));
 
 addSpacing(1);
 
-// Logical Tests
+// Logical Tests ---------------------------------------------------------------------------------------------------
 
-const tester = test("Function Test");
+const tester = test("Function Tests");
 
-tester.isEqual(square(5), 25, "Square of 5 | Positive Numbers");
-tester.isEqual(square(-3), 9, "Square of -3 | Negative numbers");
-tester.isEqual(square(0), 0, "Square of 0 | Squaring 0");
-tester.isEqual(square(2.5), 6.25, "Square of 2.5 | Decimal numbers");
+// Square Function --------------------------------------------------------------------------------------------------
+tester.isEqual(square(5), 25, "Square of 5 | Testing positive Numbers");
+tester.isEqual(square(-3), 9, "Square of -3 | Testing negative numbers");
+tester.isEqual(square(0), 0, "Square of 0 | Testing squaring 0");
+tester.isEqual(square(2.5), 6.25, "Square of 2.5 | Testing decimal numbers");
 
 //#region Util Functions
 
