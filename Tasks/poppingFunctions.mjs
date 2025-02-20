@@ -23,31 +23,9 @@ function absolute(value) { // Helper function to ensure input value isn't negati
     return value < 0 ? -value : value; 
 }
 
-function square(num) {
-    return num * num;
-}
 
 function inchToMM(int) {
     return int * consts.INCH_CONVERSION;
-}
-
-function root(num, precision = consts.DEFAULT_PRECISION){
-
-    if (num < 0) {
-        return false;
-    }
-
-    let x = num, prev;
-    do {
-        prev = x;
-        x = (x + num / x) / 2;
-    } while (absolute(x - prev) > precision);
-
-    return x;
-}
-
-function cube(num) {
-    return num * square(num);
 }
 
 function areaOfCircle(radius) {
@@ -57,6 +35,40 @@ function areaOfCircle(radius) {
 function greet(name) {
     return `${consts.GREETING_TEMP}${name}!`;
 }
+
+function mathOperations(operation) {
+    return function (num) {
+        switch (operation) {
+
+            case "square":
+                return num * num;
+
+            case "cube":
+                return num * num * num;
+
+            case "root":
+                if (num < 0) {
+                    return null;
+                }
+
+                let x = num, prev;
+
+                do {
+                    prev = x;
+                    x = (x + num / x) / 2;
+                } while (absolute(x - prev) > consts.DEFAULT_PRECISION);
+
+                return x;
+                
+            default:
+                return null;
+        }
+    }
+}
+
+const square = mathOperations("square");
+const cube = mathOperations("cube");
+const root = mathOperations("root");
 
 addSpacing(1);
 
