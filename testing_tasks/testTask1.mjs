@@ -1,18 +1,6 @@
 import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../Tasks/poppingFunctions.mjs";  
 import test from "../test.mjs";
 
-
-// Use-case Functionality Tests -------------------------------------------------------------------------------------
-
-print(square(10));
-print(inchToMM(20));
-print(root(16));
-print(cube(4));
-print(areaOfCircle(5));
-print(greet("Aleks"));
-
-addSpacing(1);
-
 // Test Framework Tests ---------------------------------------------------------------------------------------------
 
 const tester = test("Function Tests");
