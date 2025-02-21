@@ -72,7 +72,7 @@ const root = mathOperations("root");
 addSpacing(1);
 
 
-// Use-case Functionality Tests -----------------------------------------------------------------------------------
+// Use-case Functionality Tests -------------------------------------------------------------------------------------
 
 print(square(10));
 print(inchToMM(20));
@@ -83,7 +83,7 @@ print(greet("Aleks"));
 
 addSpacing(1);
 
-// Logical Tests ---------------------------------------------------------------------------------------------------
+// Test Framework Tests ---------------------------------------------------------------------------------------------
 
 const tester = test("Function Tests");
 
@@ -99,6 +99,9 @@ tester.isNotANumber(square(NaN), "Square of NaN should be NaN | Testing non-numb
 tester.isNotANumber(square(null), "Square of Null should be NaN | Testing null");
 tester.isNotANumber(square(undefined), "Square of undefined should be NaN | Testing undefined");
 tester.isNotANumber(square("Wizard"), "Squaring 'Wizard' should return NaN | Testing string");
+
+// inchToMM Function ------------------------------------------------------------------------------------------------
+tester.isEqual(inchToMM(20), 508, "Returning 20 inches to mm")
 
 //#region Util Functions
 
