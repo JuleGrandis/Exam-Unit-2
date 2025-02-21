@@ -24,6 +24,9 @@ function absolute(value) { // Helper function to ensure input value isn't negati
 }
 
 function inchToMM(int) {
+    if (typeof int != "number" || isNaN(int)) {
+        return NaN;
+    }
     return int * consts.INCH_CONVERSION;
 }
 
@@ -103,8 +106,15 @@ tester.isNotANumber(square(null), "Square of Null should be NaN | Testing null")
 tester.isNotANumber(square(undefined), "Square of undefined should be NaN | Testing undefined");
 tester.isNotANumber(square("Wizard"), "Squaring 'Wizard' should return NaN | Testing string");
 
+addSpacing(1);
 // inchToMM Function ------------------------------------------------------------------------------------------------
-tester.isEqual(inchToMM(20), 508, "Returning 20 inches to mm")
+tester.isEqual(inchToMM(20), 508, "Converting 20 inches to mm | Testing positive numbers");
+tester.isEqual(inchToMM(0), 0, "Converting 0 inches to mm | Testing with 0");
+tester.isEqual(inchToMM(2.5), 63.5, "Converting 2.5 inches to mm | Testing with decimals");
+tester.dosNotThrowError(() => inchToMM(-5), "Negative inches should throw an error | Testing with negative numbers");
+
+// Edge cases
+tester.isNotANumber(inchToMM(null), "Testing with 'null' input")
 
 //#region Util Functions
 
