@@ -88,14 +88,15 @@ addSpacing(1);
 const tester = test("Function Tests");
 
 // Square Function --------------------------------------------------------------------------------------------------
-tester.isEqual(square(5), 25, "Square of 5 | Testing positive Numbers");
-tester.isEqual(square(-3), 9, "Square of -3 | Testing negative numbers");
-tester.isEqual(square(0), 0, "Square of 0 | Testing squaring 0");
-tester.isEqual(square(2.5), 6.25, "Square of 2.5 | Testing decimal numbers");
+tester.isEqual(square(5), 25, "Square of 5 should be 25| Testing positive Numbers");
+tester.isEqual(square(-3), 9, "Square of -3 should be 9 | Testing negative numbers");
+tester.isEqual(square(0), 0, "Square of 0 should be 0 | Testing squaring 0");
+tester.isEqual(square(2.5), 6.25, "Square of 2.5 should be 6.25 | Testing decimal numbers");
 
 // Edge cases
-tester.isEqual(square(1e10), 1e20, "Squaring 1e10 | Testing large numbers");
-tester.isEqual(square)
+tester.isEqual(square(1e10), 1e20, "Squaring 1e10 should be 1e20 | Testing large numbers");
+tester.isNotANumber(square(NaN), "Square of NaN should be NaN | Testing non-numbers");
+tester.isNotANumber(square(null), "Square of Null should be NaN | Testing null");
 
 //#region Util Functions
 
