@@ -19,7 +19,7 @@ const consts = {
     GREETING_TEMP: "Greetings, "
 }
 
-function absolute(value) { // Helper function to ensure input value isn't negative used in later function
+function absolute(value) { // Helper function to ensure input value isn't negative, created to avoid using Math.abs
     return value < 0 ? -value : value; 
 }
 
@@ -108,13 +108,17 @@ tester.isNotANumber(square("Wizard"), "Squaring 'Wizard' should return NaN | Tes
 
 addSpacing(1);
 // inchToMM Function ------------------------------------------------------------------------------------------------
-tester.isEqual(inchToMM(20), 508, "Converting 20 inches to mm | Testing positive numbers");
-tester.isEqual(inchToMM(0), 0, "Converting 0 inches to mm | Testing with 0");
-tester.isEqual(inchToMM(2.5), 63.5, "Converting 2.5 inches to mm | Testing with decimals");
+tester.isEqual(inchToMM(20), 508, "Converting 20 inches to mm, should return 508 | Testing positive numbers");
+tester.isEqual(inchToMM(0), 0, "Converting 0 inches to mm, should return 0 | Testing with 0");
+tester.isEqual(inchToMM(2.5), 63.5, "Converting 2.5 inches to mm, should return 63.5 | Testing with decimals");
 tester.dosNotThrowError(() => inchToMM(-5), "Negative inches should throw an error | Testing with negative numbers");
 
 // Edge cases
-tester.isNotANumber(inchToMM(null), "Testing with 'null' input")
+tester.isNotANumber(inchToMM(null), "Testing with 'null' input, should return NaN")
+tester.isNotANumber(inchToMM(undefined), "Testing with 'undefined' input, should return NaN")
+tester.isNotANumber(inchToMM("Staff"), "Testing with string, should return NaN");
+
+addSpacing(1);
 
 //#region Util Functions
 
