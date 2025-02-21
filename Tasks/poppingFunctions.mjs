@@ -124,9 +124,14 @@ tester.isNotANumber(inchToMM("Staff"), "Testing with string, should return NaN")
 
 addSpacing(1);
 // root Function ----------------------------------------------------------------------------------------------------
-tester.isEqual(root(16), 4, "Root of 16, should return 4");
-tester.isEqual(root(0), 0, "Root of 0, should rerun 0");
-tester.isInRange(root(2), 1.4142, 1.4143, "Root of 2, should return approximately 1.4142")
+tester.isEqual(root(16), 4, "Root of 16, should return 4 | Testing with positive numbers");
+tester.isEqual(root(0), 0, "Root of 0, should rerun 0 | Testing with 0");
+tester.isInRange(root(2), 1.4142, 1.4143, "Root of 2, should return approximately 1.4142 | Testing with decimal conversion");
+tester.dosNotThrowError(() => root(-16), "Testing negative numbers, should throw an error. | Error handling functionality");
+
+// Edge cases
+tester.isEqual(root(0.0001), 0.01, "Root of 0.0001, should return 0.01 | Testing with small numbers");
+tester.isEqual(root(1e10), 1e5, "Root of 1e10, should return 1e5 | Testing large number");
 //#region Util Functions
 
 function print(text) {
