@@ -40,6 +40,9 @@ function mathOperations(operation) {
         switch (operation) {
 
             case "square":
+                if (typeof num != "number" || isNaN(num)) {
+                    return NaN;
+                }
                 return num * num;
 
             case "cube":
