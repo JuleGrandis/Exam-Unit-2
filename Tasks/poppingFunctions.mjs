@@ -56,6 +56,10 @@ function mathOperations(operation) {
                     return null;
                 }
 
+                if (num === 0) {
+                    return 0;
+                }
+
                 let x = num, prev;
 
                 do {
@@ -119,7 +123,10 @@ tester.isNotANumber(inchToMM(undefined), "Testing with 'undefined' input, should
 tester.isNotANumber(inchToMM("Staff"), "Testing with string, should return NaN");
 
 addSpacing(1);
-
+// root Function ----------------------------------------------------------------------------------------------------
+tester.isEqual(root(16), 4, "Root of 16, should return 4");
+tester.isEqual(root(0), 0, "Root of 0, should rerun 0");
+tester.isInRange(root(2), 1.4142, 1.4143, "Root of 2, should return approximately 1.4142")
 //#region Util Functions
 
 function print(text) {
