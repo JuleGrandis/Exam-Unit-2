@@ -97,6 +97,8 @@ tester.isEqual(square(2.5), 6.25, "Square of 2.5 should be 6.25 | Testing decima
 tester.isEqual(square(1e10), 1e20, "Squaring 1e10 should be 1e20 | Testing large numbers");
 tester.isNotANumber(square(NaN), "Square of NaN should be NaN | Testing non-numbers");
 tester.isNotANumber(square(null), "Square of Null should be NaN | Testing null");
+tester.isNotANumber(square(undefined), "Square of undefined should be NaN | Testing undefined");
+tester.isNotANumber(square("Wizard"), "Squaring 'Wizard' should return NaN | Testing string");
 
 //#region Util Functions
 
