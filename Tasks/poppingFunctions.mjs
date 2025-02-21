@@ -49,6 +49,9 @@ function mathOperations(operation) {
                 return num * num;
 
             case "cube":
+                if (typeof num != "number" || isNaN(num)) {
+                    return NaN;
+                }
                 return num * num * num;
 
             case "root":
@@ -134,7 +137,20 @@ tester.isEqual(root(0.0001), 0.01, "Root of 0.0001, should return 0.01. | Testin
 tester.isEqual(root(1e10), 1e5, "Root of 1e10, should return 1e5. | Testing large number.");
 tester.dosNotThrowError(() => root(null), "Root of null, should throw and error. | null error handling.");
 tester.dosNotThrowError(() => root(undefined), "Root of undefined, should throw error. | undefined error handling.");
-tester.dosNotThrowError(() => root("Wonderful"), "Root of string, should throw error. | string error handling.")
+tester.dosNotThrowError(() => root("Wonderful"), "Root of string, should throw error. | string error handling.");
+
+addSpacing(1);
+// cube Function ------------------------------------------------------------------------------------------------------
+tester.isEqual(cube(4), 64, "Cube of 4, should return 64 | Testing positive numbers.");
+tester.isEqual(cube(0), 0, "Cube of 0, should return 0 | Testing with 0");
+tester.isEqual(cube(-4), -64, "Cube of -4, should return -64 | Testing negative numbers.");
+tester.isEqual(cube(2.5), 15.625, "Cube of 2.5, should return 15.625 | Testing with decimals");
+
+// Edge cases
+tester.isEqual(cube(1e4), 1e12, "Cube of 1e4, should return 1e12 | Testing with large numbers");
+tester.isNotANumber(cube(null), "Cube of null, should return NaN | NaN handling");
+tester.isNotANumber(cube(undefined), "Cube of undefined, should return NaN | NaN handling");
+tester.is
 //#region Util Functions
 
 function print(text) {
