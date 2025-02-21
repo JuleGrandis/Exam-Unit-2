@@ -93,6 +93,10 @@ tester.isEqual(square(-3), 9, "Square of -3 | Testing negative numbers");
 tester.isEqual(square(0), 0, "Square of 0 | Testing squaring 0");
 tester.isEqual(square(2.5), 6.25, "Square of 2.5 | Testing decimal numbers");
 
+// Edge cases
+tester.isEqual(square(1e10), 1e20, "Squaring 1e10 | Testing large numbers");
+tester.isEqual(square)
+
 //#region Util Functions
 
 function print(text) {
