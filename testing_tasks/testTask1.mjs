@@ -1,5 +1,6 @@
 import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../tasks/task1.mjs";  
 import test from "../test.mjs";
+import {print, addSpacing} from "../helperFunctions.mjs";
 
 // Test Framework Tests ---------------------------------------------------------------------------------------------
 
@@ -86,16 +87,3 @@ tester.isEqual(greet(null), "Greetings, null!", "Greeting 'null' | Testing with 
 tester.isEqual(greet(undefined), "Greetings, undefined!", "Greeting 'undefined' | Testing with 'undefined'");
 tester.isEqual(greet(7), "Greetings, 7!", "Greeting 7 | Testing with numbers");
 tester.isEqual(greet("X".repeat(2000)), `Greetings, ${"X".repeat(2000)}!`, "Greeting X(...) | Testing with long names");
-//#region Util Functions
-
-function print(text) {
-    console.log(text);
-}
-
-function addSpacing(lines = 1) {
-    for (let i = 0; i < lines; i++) {
-        console.log("");
-    }
-}
-
-//#endregion

@@ -20,3 +20,5 @@ function processNodes(node) {
 
     return traverse(node, 1);
 }
+
+export default processNodes;
