@@ -22,21 +22,6 @@ export function absolute(value) { // Helper function to ensure input value isn't
     return value < 0 ? -value : value; 
 }
 
-export function inchToMM(int) {
-    if (typeof int != "number" || isNaN(int)) {
-        return NaN;
-    }
-    return int * consts.INCH_CONVERSION;
-}
-
-export function areaOfCircle(radius) {
-    return consts.PI * radius * radius;
-}
-
-export function greet(name) {
-    return `${consts.GREETING_TEMP}${name}!`;
-}
-
 export function mathOperations(operation) {
     return function (num) {
         switch (operation) {
@@ -71,6 +56,18 @@ export function mathOperations(operation) {
 
                 return x;
 
+            case "areaOfCircle":
+                return consts.PI * num * num;
+
+            case "inchToMM":
+                if (typeof num != "number" || isNaN(num)) {
+                    return NaN;
+                }
+                return num * consts.INCH_CONVERSION;
+
+            case "greet":
+                return `${consts.GREETING_TEMP}${num}!`;
+
             default:
                 return null;
         }
@@ -80,3 +77,6 @@ export function mathOperations(operation) {
 export const square = mathOperations("square");
 export const cube = mathOperations("cube");
 export const root = mathOperations("root");
+export const areaOfCircle = mathOperations("areaOfCircle");
+export const inchToMM = mathOperations("inchToMM");
+export const greet = mathOperations("greet");
