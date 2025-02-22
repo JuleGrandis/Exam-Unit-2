@@ -1,4 +1,4 @@
-import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../Tasks/poppingFunctions.mjs";  
+import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../tasks/task2.mjs";  
 import test from "../test.mjs";
 
 // Test Framework Tests ---------------------------------------------------------------------------------------------
