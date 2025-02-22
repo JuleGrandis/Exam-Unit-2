@@ -1,4 +1,4 @@
-import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../tasks/task2.mjs";  
+import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../tasks/task1.mjs";  
 import test from "../test.mjs";
 
 // Test Framework Tests ---------------------------------------------------------------------------------------------

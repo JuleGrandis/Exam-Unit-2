@@ -1,5 +1,5 @@
 import arrays from "../example_files/arrays.json" assert {type: "json"};
-import flattenArray from "../tasks/task1.mjs";
+import flattenArray from "../tasks/task2.mjs";
 import test from "../test.mjs";
 
 const input = arrays;
