@@ -11,10 +11,9 @@ Create the following functions:
 //#endregion
 
 export const consts = {
-    INCH_CONVERSION: 25.4,
+    INCH_CONVERSION_RATE: 25.4,
     PI: 3.14159,
     DEFAULT_PRECISION: 1e-7, //Set to 1e-7 following Newton-Raphson method to limit iterations
-    ERROR_NEGATIVE_ROOT: "Can't root negative numbers",
     GREETING_TEMP: "Greetings, "
 }
 
@@ -63,7 +62,7 @@ export function mathOperations(operation) {
                 if (typeof num != "number" || isNaN(num)) {
                     return NaN;
                 }
-                return num * consts.INCH_CONVERSION;
+                return num * consts.INCH_CONVERSION_RATE;
 
             case "greet":
                 return `${consts.GREETING_TEMP}${num}!`;
