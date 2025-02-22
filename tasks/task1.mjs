@@ -1,15 +1,15 @@
-export const consts = {
+const consts = {
     INCH_CONVERSION_RATE: 25.4,
     PI: 3.14159,
     DEFAULT_PRECISION: 1e-7, //Set to 1e-7 following Newton-Raphson method to limit iterations
     GREETING_TEMP: "Greetings, "
 }
 
-export function absolute(value) { // Helper function to ensure input value isn't negative, created to avoid using Math.abs
+function absolute(value) { // Helper function to ensure input value isn't negative, created to avoid using Math.abs
     return value < 0 ? -value : value; 
 }
 
-export function mathOperations(operation) {
+function mathOperations(operation) {
     return function (num) {
         switch (operation) {
 

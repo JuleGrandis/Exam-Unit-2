@@ -1,6 +1,6 @@
 import {inchToMM, areaOfCircle, greet, square, cube, root  } from "../tasks/task1.mjs";  
 import test from "../test.mjs";
-import {print, addSpacing} from "../util/utilsFunctions.mjs";
+import {print, addSpacing} from "../utils/utilsFunctions.mjs";
 
 // Test Framework Tests ---------------------------------------------------------------------------------------------
 
