@@ -1,23 +1,22 @@
 function processNodes(node) {
-    let sum = 0;
-    let maxDepth = 0;
-    let nodeCount = 0;
-
     function traverse (node, depth) {
-        if (node === null) return;
-
-        sum += node.value;
-        nodeCount++;
-        
-        if (depth > maxDepth) {
-            maxDepth = depth;
+        if (node === null) {
+            return { sum: 0, maxDepth: depth - 1, nodeCount: 0};
         }
 
-        traverse(node.left, depth + 1);
-        traverse(node.right, depth + 1);
+        const leftResult = traverse(node.left, depth + 1);
+        const rightResult = traverse(node.right, depth + 1);
+
+        const sum = node.value + leftResult.sum + rightResult.sum;
+        const nodeCount = 1 + leftResult.nodeCount + rightResult.nodeCount;
+
+        const maxDepth = (leftResult.maxDepth > rightResult.maxDepth)
+            ? leftResult.maxDepth
+            : rightResult.maxDepth;
+        const currentMaxDepth = (depth > maxDepth) ? depth : maxDepth;
+
+        return { sum, maxDepth: currentMaxDepth, nodeCount};
     }
 
-    traverse(node, 1);
-
-    return { sum, maxDepth, nodeCount};
+    return traverse(node, 1);
 }
