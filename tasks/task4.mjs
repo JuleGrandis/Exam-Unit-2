@@ -1,4 +1,35 @@
-import books from "../example_files/books.json" with {type: "json"};
+//#region Started on higher order function didn't make it in time.
+function bookSorting (operation) {
+    return function (books) {
+        switch (operation) {
+            case "booksStartingWithThe":
+                const result1 = [];
+                const titles1 = [];
+                for (let i = 0; i < books.length; i++) {
+                    if (books[i].title.startsWith("The")) {
+                        result1.push(books[i]);
+                        titles1.push(books[i].title);
+                    }
+                }
+
+                return { result1, titles1 };
+            
+            case "booksByAuthorT":
+                const result2 = [];
+                const titles2 = [];
+                for (let i = 0; i < books.length; i++) {
+                    if (books[i].author.toLowerCase().includes("t")) {
+                        result2.push(books[i])
+                        titles2.push(books[i].title)
+                    }
+                }
+
+                return { result2, titles2 };
+        }
+    }
+}
+//#endregion
+
 
 export function booksStartingWithThe(books) {
     const result = [];
@@ -14,16 +45,7 @@ export function booksStartingWithThe(books) {
 }
 
 export function booksByAuthorT(books) {
-    const result = [];
-    const titles = [];
-    for (let i = 0; i < books.length; i++) {
-        if (books[i].author.toLowerCase().includes("t")) {
-            result.push(books[i])
-            titles.push(books[i].title)
-        }
-    }
-
-    return { result, titles };
+    
 }
 
 export function booksAfter1992(books) {
