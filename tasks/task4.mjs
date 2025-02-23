@@ -80,6 +80,22 @@ export function sortBooksChrono(books, ascending = true) {
     return sortedBooks;
 }
 
+export function sortBooksAlphabetically(books, ascending = true) {
+    const sortedBooks = [...books];
+    for (let i = 0; i < sortedBooks.length - 1; i++) {
+        for (let j = i + 1; j < sortedBooks.length; j++) {
+            const compare = sortedBooks[i].title.localeCompare(sortedBooks[j].title); //Note to self https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+            if ((ascending && compare > 0) || (!ascending && compare < 0)) {
+                const temp = sortedBooks[i];
+                sortedBooks[i] = sortedBooks[j];
+                sortedBooks[j] = temp;
+            }
+        }
+    }
+
+    return sortedBooks;
+}
+
 
 
 
