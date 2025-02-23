@@ -52,4 +52,15 @@ export function booksBefore2004(books) {
     return { count, titles };
 }
 
+export function isbnAuthor(books, authorName) {
+    const result = [];
+    for (let i =0; i < books.length; i++) {
+        if (books[i].author === authorName){
+            result.push(books[i].isbn);
+        }
+    }
+
+    return result;
+}
+
 

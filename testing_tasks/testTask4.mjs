@@ -1,4 +1,4 @@
-import { booksStartingWithThe, booksByAuthorT, booksAfter1992, booksBefore2004 } from "../tasks/task4.mjs";
+import { booksStartingWithThe, booksByAuthorT, booksAfter1992, booksBefore2004, isbnAuthor } from "../tasks/task4.mjs";
 import test from "../test.mjs";
 import { addSpacing } from "../utils/utilsFunctions.mjs";
 import books from "../example_files/books.json" with { type: "json" };
@@ -43,6 +43,12 @@ tester.isEqual(amountOfBooksBefore2004, 46, "Number of books published 2004, sho
 // console.log(titleOfBooksBefore2004);
 
 addSpacing(1);
+
+// Return the ISBN Number of a given author
+const TERRY_PRATCHETT = isbnAuthor(books, "Terry Pratchett");
+
+console.log(TERRY_PRATCHETT); // Don't know how to do a test with the test parameter here.
+
 
 
 
