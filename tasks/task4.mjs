@@ -15,24 +15,28 @@ export function booksStartingWithThe(books) {
 
 export function booksByAuthorT(books) {
     const result = [];
+    const author = [];
     for (let i = 0; i < books.length; i++) {
-        if (books[i].author.toLowercase().includes("t")) {
+        if (books[i].author.includes("t", "T")) {
             result.push(books[i])
+            author.push(books[i].author)
         }
     }
 
-    return result;
+    return { result, author };
 }
 
 export function booksAfter1992(books) {
     let count = 0;
+    const titles = [];
     for (let i = 0; i < books.length; i++) {
         if (books[i].publication_year > 1992) {
             count ++;
+            titles.push(books[i].title);
         }
     }
 
-    return count;
+    return { count, titles };
 }
 
 
