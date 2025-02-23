@@ -11,6 +11,4 @@ const expected = [ 6410, 2831, 5049, 7554, 8707, 6940, 9517, 7565, 7522, 9242, 7
 
 const tester = test("Flatten array function test");
 
-tester.isEqual(flattenArray(input), expected, "Flatten array test");
-// I didn't have time to "hardcode" the test, or edit the "isEqual" function.
-// It returns red due to JS treating each array as a new object, so the === check doesn't work.
+tester.isEqual(flattenArray(input).toString(), expected.toString(), 'Testing if function return expected array');

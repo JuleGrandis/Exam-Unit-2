@@ -18,7 +18,10 @@ function processNodes(node) {
         return { sum, maxDepth: currentMaxDepth, nodeCount};
     }
 
-    return traverse(node, 1);
+    const result = traverse(node, 1);
+
+    return `${result.sum}, ${result.maxDepth}, ${result.nodeCount}`;
+
 }
 
 export default processNodes;
