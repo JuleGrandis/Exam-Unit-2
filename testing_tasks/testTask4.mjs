@@ -11,16 +11,16 @@ const amountOfBooksStartingWithThe = booksStartingWithThe(books).result;
 const titlesOfBooksStartingWithThe = booksStartingWithThe(books).titles;
 
 tester.isEqual(amountOfBooksStartingWithThe.length, 34, "Number of books starting with 'The' should be 34");
-console.log(titlesOfBooksStartingWithThe);
+// console.log(titlesOfBooksStartingWithThe);
 
 // Books with author with "t" in their name
 const amountOfAuthorsT =  booksByAuthorT(books).result;
-const authorsWithT = booksByAuthorT(books).author;
+const authorsWithT = booksByAuthorT(books).titles;
 
 addSpacing(1);
 
-tester.isEqual(booksByAuthorT(books), 47, "Number of books where the Author has 't' in their name");
-console.log(authorsWithT);
+tester.isEqual(amountOfAuthorsT.length, 51, "Number of books where the Author has 't' in their name");
+// console.log(authorsWithT);
 
 
 

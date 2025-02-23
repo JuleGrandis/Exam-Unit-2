@@ -15,15 +15,15 @@ export function booksStartingWithThe(books) {
 
 export function booksByAuthorT(books) {
     const result = [];
-    const author = [];
+    const titles = [];
     for (let i = 0; i < books.length; i++) {
-        if (books[i].author.includes("t", "T")) {
+        if (books[i].author.toLowerCase().includes("t")) {
             result.push(books[i])
-            author.push(books[i].author)
+            titles.push(books[i].title)
         }
     }
 
-    return { result, author };
+    return { result, titles };
 }
 
 export function booksAfter1992(books) {
