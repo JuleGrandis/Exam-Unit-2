@@ -1,4 +1,4 @@
-import { booksStartingWithThe, booksByAuthorT, booksAfter1992 } from "../tasks/task4.mjs";
+import { booksStartingWithThe, booksByAuthorT, booksAfter1992, booksBefore2004 } from "../tasks/task4.mjs";
 import test from "../test.mjs";
 import { addSpacing } from "../utils/utilsFunctions.mjs";
 import books from "../example_files/books.json" with { type: "json" };
@@ -27,15 +27,22 @@ tester.isEqual(amountOfAuthorsT.length, 51, "Number of books where the Author ha
 addSpacing(1);
 
 // Books after 1992
-const booksAfter1992Result = booksAfter1992(books);
-const amountOfBooksAfter1992 = booksAfter1992Result.count;
-const titleOfBooksAfter1992 = booksAfter1992Result.titles;
+const amountOfBooksAfter1992 = booksAfter1992(books).count;
+const titleOfBooksAfter1992 = booksAfter1992(books).titles;
 
-tester.isEqual(amountOfBooksAfter1992, 97, "Number of books published after 1992");
+tester.isEqual(amountOfBooksAfter1992, 97, "Number of books published after 1992, should be 97");
 // console.log(titleOfBooksAfter1992);
 
 addSpacing(1);
 
+// Books before 2004
+const amountOfBooksBefore2004 = booksBefore2004(books).count;
+const titleOfBooksBefore2004 = booksBefore2004(books).titles;
+
+tester.isEqual(amountOfBooksBefore2004, 46, "Number of books published 2004, should be 46");
+// console.log(titleOfBooksBefore2004);
+
+addSpacing(1);
 
 
 

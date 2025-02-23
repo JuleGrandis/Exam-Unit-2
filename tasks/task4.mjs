@@ -39,5 +39,17 @@ export function booksAfter1992(books) {
     return { count, titles };
 }
 
+export function booksBefore2004(books) {
+    let count = 0;
+    const titles = [];
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].publication_year <= 2004) {
+            count++
+            titles.push(books[i].title);
+        }
+    }
+
+    return { count, titles };
+}
 
 
