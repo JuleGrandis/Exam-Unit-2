@@ -1,0 +1,20 @@
+{
+  "name": "exam-unit-2",
+  "version": "1.0.0",
+  "description": "The spirit of this assignment is to do everything as well as you can from scratch. \r I.e. if there is functionality-built in, that will solve the problem quickly, then that is not what we want you to do. Use your skill and knowledge and the concepts we have been covering to solve these tasks (Under no circumstances use Linq or similar solutions).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuleGrandis/Exam-Unit-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuleGrandis/Exam-Unit-2/issues"
+  },
+  "homepage": "https://github.com/JuleGrandis/Exam-Unit-2#readme"
+}

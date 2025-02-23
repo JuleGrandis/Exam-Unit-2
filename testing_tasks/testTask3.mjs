@@ -1,7 +1,7 @@
 import test from "../test.mjs";
 import processNodes from "../tasks/task3.mjs";
 import {print, addSpacing} from "../utils/utilsFunctions.mjs";
-import nodes from "../example_files/nodes.json" assert { type: "json" };
+import nodes from "../example_files/nodes.json" with { type: "json" };
 
 const nodeInput = nodes;
 

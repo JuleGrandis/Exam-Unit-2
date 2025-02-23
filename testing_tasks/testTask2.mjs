@@ -1,4 +1,4 @@
-import arrays from "../example_files/arrays.json" assert {type: "json"};
+import arrays from "../example_files/arrays.json" with {type: "json"};
 import flattenArray from "../tasks/task2.mjs";
 import test from "../test.mjs";
 
