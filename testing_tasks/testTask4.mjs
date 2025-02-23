@@ -1,4 +1,4 @@
-import { booksStartingWithThe, booksByAuthorT, booksAfter1992, booksBefore2004, isbnAuthor } from "../tasks/task4.mjs";
+import { booksStartingWithThe, booksByAuthorT, booksAfter1992, booksBefore2004, isbnAuthor, sortBooksChrono } from "../tasks/task4.mjs";
 import test from "../test.mjs";
 import { addSpacing } from "../utils/utilsFunctions.mjs";
 import books from "../example_files/books.json" with { type: "json" };
@@ -45,10 +45,15 @@ tester.isEqual(amountOfBooksBefore2004, 46, "Number of books published 2004, sho
 addSpacing(1);
 
 // Return the ISBN Number of a given author
-const TERRY_PRATCHETT = isbnAuthor(books, "Terry Pratchett");
+tester.dosNotThrowError(()=> isbnAuthor(books, "Terry Pratchett"), "Testing if function works with input 'Terry Pratchett'");
 
-console.log(TERRY_PRATCHETT); // Don't know how to do a test with the test parameter here.
+addSpacing(1);
+// Books in chronological order
+tester.dosNotThrowError(()=> sortBooksChrono(books, true), "Testing if function works ascending")
+tester.dosNotThrowError(()=> sortBooksChrono(books, false), "Testing if function works descending")
 
+addSpacing(1);
 
+// Books in alphabetical oprder
 
 

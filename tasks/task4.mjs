@@ -63,4 +63,23 @@ export function isbnAuthor(books, authorName) {
     return result;
 }
 
+export function sortBooksChrono(books, ascending = true) {
+    const sortedBooks = [...books];
+    for (let i = 0; i < sortedBooks.length - 1; i++) {
+        for (let j = i + 1; j < sortedBooks.length; j++) {
+            if ((ascending && sortedBooks[i].publication_year > sortedBooks[j].publication_year) 
+                || (!ascending && sortedBooks[i].publication_year < sortedBooks[j.publication_year])) {
+                
+                const temp = sortedBooks[i];
+                sortedBooks[i] = sortedBooks [j];
+                sortedBooks [j] = temp;
+            }
+        }
+    }
+
+    return sortedBooks;
+}
+
+
+
 
